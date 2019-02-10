@@ -1,8 +1,11 @@
 {
 	"name": "logdive",
 	"displayName": "logdive",
+	"icon": "images/dive.png",
+	"repository": { "url": "https://github.com/jeroendeswaef/vscode-log-dive" },
+	"publisher": "recallq",
 	"description": "Analyse abnormalities in logs around a certain time",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.30.0"
 	},
