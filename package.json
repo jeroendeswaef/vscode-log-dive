@@ -1,0 +1,68 @@
+{
+	"name": "logdive",
+	"displayName": "logdive",
+	"description": "Analyse abnormalities in logs around a certain time",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.logDive"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.logDive",
+				"title": "Log Dive"
+			}
+		],
+		"configuration": {
+			"title": "Log Dive",
+			"properties": {
+				"logdive.awsRegion": {
+					"type": "string",
+					"default": "eu-west-1",
+					"description": "The AWS region to connect to with the AWS SDK"
+				},
+				"logdive.logGroupName": {
+					"type": "string",
+					"default": null,
+					"description": "The log group in CloudWatch to filter on"
+				},
+				"logdive.startTime": {
+					"type": "string",
+					"default": "2019-02-04T09:50:00.000Z",
+					"description": "The start time to filter the logs"
+				},
+				"logdive.endTime": {
+					"type": "string",
+					"default": "2019-02-04T10:00:00.000Z",
+					"description": "The end time to filter the logs"
+				},
+				"logdive.filterPattern": {
+					"type": "string",
+					"default": null,
+					"description": "The Cloudwatch filter"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"eslint": "^4.11.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"aws-sdk": "^2.395.0"
+	}
+}
